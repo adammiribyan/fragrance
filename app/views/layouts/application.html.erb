@@ -5,6 +5,9 @@
     <title><%= yield :title %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
+    <!--[if IE]>
+    <%= javascript_include_tag "http://html5shiv.googlecode.com/svn/trunk/html5.js" %>
+    <![endif]-->
     <%= csrf_meta_tag %>
   </head>
   <body class="<%= params.values_at(:controller, :action).join(' ') %>">
