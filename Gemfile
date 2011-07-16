@@ -9,6 +9,9 @@ gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
 
+# Sass vanilla mixins
+gem 'bourbon', git: 'git://github.com/thoughtbot/bourbon.git'
+
 # Simple form for quick forms
 gem 'simple_form'
 
@@ -43,7 +46,7 @@ group :test do
   # Moching
   gem 'mocha'
   # Factories
-  gem 'factory_girl_rails', :git => 'git://github.com/thoughtbot/factory_girl_rails.git'
+  gem 'factory_girl_rails', git: 'git://github.com/thoughtbot/factory_girl_rails.git'
   # Autotest with notification and coloring
   gem 'autotest'
   gem 'autotest-rails-pure'

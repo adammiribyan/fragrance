@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/thoughtbot/bourbon.git
+  revision: 538540b7bb8810d746d525a7ef45a6d9c4cf4fd9
+  specs:
+    bourbon (0.1.1)
+      sass (>= 3.1)
+
+GIT
   remote: git://github.com/thoughtbot/factory_girl_rails.git
   revision: e36a7c9a11f2c3c42091e23bd0996a733220a5c3
   specs:
@@ -167,6 +174,7 @@ DEPENDENCIES
   autotest
   autotest-growl
   autotest-rails-pure
+  bourbon!
   cancan
   capistrano
   carrierwave
