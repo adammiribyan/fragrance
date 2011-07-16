@@ -1,35 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @item.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @item.description %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @item.price %>
-</p>
-
-<p>
-  <b>Gender:</b>
-  <%= @item.gender %>
-</p>
-
-<p>
-  <b>Volume:</b>
-  <%= @item.volume %>
-</p>
-
-<p>
-  <b>Launched at:</b>
-  <%= @item.launched_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= content_tag_for(:article, @item) do %>
+  <section>
+    <%= image_tag "http://www.letu.ru/common/img/uploaded/product/EBUR29002_250.jpg" %>
+  </section>
+  <section>
+    <hgroup>
+      <h1><%= @item.name %></h1>
+      <h2>Духи для женщин.</h2>
+    </hgroup>
+    <div class="description">
+      <%= simple_format @item.description %>
+    </div>
+    <%= simple_form_for :item do |f| %>
+      <%= f.input :volume, :as => :select, collection: %w(100 75 50), include_blank: false %>
+      <div class="price"><%= number_to_currency @item.price %></div>
+      <%= f.submit "Добавить в корзину" %>
+    <% end %>
+    <footer>
+      <ul>
+        <li><%= link_to "Задать вопрос", "" %></li>
+        <li><%= link_to "Добавить в вишлист", "" %></li>
+      </ul>
+    </footer>
+  </section>
+<% end %>
